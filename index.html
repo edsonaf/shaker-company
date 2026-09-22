@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quality Shakers — Coming Soon</title>
+<style>
+  :root {
+    --gold: #cba135;
+    --gold-soft: #e8d9a8;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+  }
+
+  /* Scrolling background layer, oversized so the sideways motion never shows an edge */
+  .bg-scroll {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("background.jpeg");
+    background-repeat: repeat;
+    background-size: 800px auto;
+    background-position: 0 0;
+    animation: slide 40s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes slide {
+    from { background-position: 0 0; }
+    to   { background-position: -800px -800px; }
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%);
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.35em;
+    font-size: 0.75rem;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .eyebrow img {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  h1 span {
+    display: block;
+    font-family: "Brush Script MT", cursive;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--gold);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    margin-top: 0.25rem;
+  }
+
+  .tagline {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #ddd;
+    letter-spacing: 0.05em;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 2rem auto;
+  }
+
+  .coming-soon {
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+  }
+
+  @media (max-width: 480px) {
+    .content { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="bg-scroll"></div>
+  <div class="overlay"></div>
+
+  <main class="content">
+    <div class="eyebrow">
+      <img src="QShakers - 1 Logo White.png" />
+    </div>
+    <h1>Something Delicious<span>is coming</span></h1>
+    <div class="divider"></div>
+    <p class="coming-soon">Coming Soon</p>
+    <p class="tagline">Your cocktail experience, elevated. Stay tuned.</p>
+  </main>
+
+</body>
+</html>
